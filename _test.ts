@@ -1,5 +1,5 @@
 // const SlsHelper = require('./index.js');
-import Sls
+import SlsHelper from './index';
 const slsHelper = new SlsHelper({
 	host: 'cn-hangzhou.log.aliyuncs.com',
 	project: 'rys-test',
