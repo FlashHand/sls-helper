@@ -1,6 +1,6 @@
 {
   "name": "ali-sls-helper",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "main": "index.js",
   "repository": "git@github.com:FlashHand/sls-helper.git",
   "author": "Wang Bo <ralwayne@163.com>",
