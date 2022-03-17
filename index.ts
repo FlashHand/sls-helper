@@ -41,7 +41,7 @@ class SlsHelper {
 	requestTrack() {
 		const requestQueue = this.queue;
 		const body = {
-			__logs__: requestQueue
+			__logs__:  requestQueue
 		}
 		console.log('post',this.queue, body);
 		try{
@@ -56,24 +56,31 @@ class SlsHelper {
 				}
 			}).then(res=>{
 			}).catch(e=>{
-				console.log(e.message);
+				console.log(e.message, e.response);
 			});
 		}catch (e){
 			console.log(e);
 		}
 		this.resetTimer();
 	}
-
+	push(log:any){
+		Object.keys(log).forEach(key=>{
+			if (typeof log[key] !== 'string') {
+				log[key] = JSON.stringify(log[key]);
+			}
+		})
+		this.queue.push(log);
+	}
 	send(log: any) {
 		if (this.timer) {
 			if (this.queue.length >= this.count) {
 				this.requestTrack();
-				this.queue.push(log);
+				this.push(log);
 			} else {
-				this.queue.push(log);
+				this.push(log);
 			}
 		} else {
-			this.queue.push(log);
+			this.push(log);
 			this.timer = setTimeout(() => {
 				this.requestTrack();
 			}, this.time*1000);
