@@ -1,0 +1,19 @@
+{
+  "name": "ali-sls-helper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:FlashHand/sls-helper.git",
+  "author": "Wang Bo <ralwayne@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "deliver": "npm publish --registry=https://registry.npmjs.org",
+    "build": "esbuild index.ts --platform=node --bundle --minify --outfile=index.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.27",
+    "tslib": "^2.3.1"
+  }
+}
