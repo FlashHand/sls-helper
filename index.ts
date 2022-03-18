@@ -1,8 +1,4 @@
 import axios from 'axios';
-axios.interceptors.request.use(config => {
-	console.log(config.data);
-	return config;
-});
 interface SLSOption {
 	host: string;
 	project: string;
@@ -43,9 +39,7 @@ class SlsHelper {
 		const body = {
 			__logs__:  requestQueue
 		}
-		console.log('post',this.queue, body);
 		try{
-			console.log(this.endpoint,body);
 			axios.post(this.endpoint, body, {
 				// baseURL:this.endpoint,
 				headers: {
