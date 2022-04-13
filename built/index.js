@@ -5,7 +5,7 @@ const axios_1 = tslib_1.__importDefault(require("axios"));
 class SlsHelper {
     constructor(option) {
         this.time = 5; //延迟发送
-        this.count = 3; //队列上限
+        this.count = 30; //队列上限
         this.queue = [];
         this.timer = null;
         this.host = option.host;
@@ -73,3 +73,4 @@ class SlsHelper {
     }
 }
 exports.default = SlsHelper;
+//# sourceMappingURL=index.js.map

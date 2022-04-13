@@ -12,7 +12,7 @@ class SlsHelper {
 	project: string;
 	logstore: string;
 	time: number = 5;//延迟发送
-	count: number = 30;//队列上限
+	count: number = 3;//队列上限
 	queue: any[] = [];
 	timer: null | ReturnType<typeof setTimeout> = null;
 
